@@ -1,4 +1,4 @@
-const compilecode = (html: string, css: string, js: string ): string =>{
+const compileCode = (html: string, css: string, js: string ): string =>{
   return `
   <!DOCTYPE html>
   <html lang="en>
@@ -26,3 +26,5 @@ const compilecode = (html: string, css: string, js: string ): string =>{
 
   `;
 };
+
+export default compileCode;
