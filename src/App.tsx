@@ -32,26 +32,44 @@ function App() {
           </button>
         <button onClick={()=>setActiveTab('js')} 
           className={`w-10 h-10 flex items-center justify-center rounded-lg transition-all font-bold
-          ${activeTab=== 'js'? 'bg-yellow-500 text-white' : 'bg-slate-500 hover:bg-slate-800'}`}>J</button>
-        
+          ${activeTab=== 'js'? 'bg-yellow-500 text-black' : 'text-slate-500 hover:bg-slate-800'}`}>
+          J
+          </button>
       </nav>
+
        {/* Editior Part  */}
-       <div className='flex flex-1'>
-        <textarea value={html}
-        onChange={(e) => setHtml(e.target.value)}
-        className='w-1/2 bg-slate-950 p-4 font-mono text-sm outline-none'
-        />
+       <div className='flex flex-1 flex-col border-r border-slate-800 bg-slate-950'>
+        {/* Tab title bar */}
+          <div className='h-10 px-4 flex items-center bg-slate-900/50 border-b border-slate-800 text-[10px] uppercase tracking-widest font-bold text-slate-500'>
+             Editing:<span className='ml-2 texxt-slate-200'>{activeTab}</span>
+          </div>
+
+          {/*dynamic text area  */}
+          <textarea 
+            className ="flex-1 p-6 bg-transparent font-mono text-sm outline-none resize-none text-slate-300"
+            spellCheck={false}
+            
+            value={activeTab==='html' ? html: activeTab === 'css' ? css : js}
+
+            onChange={(e) => {
+              if(activeTab=== 'html') setHtml(e.target.value);
+              else if(activeTab === 'css') setCss(e.target.value);
+              else setjs(e.target.value);
+            }}
+          />
+         </div>
+
         {/* Preview Part  */}
+        <div className='flex-1 bg-white'>
         <iframe 
         srcDoc={srcDoc}
-        className='w-1/2 bg-gray-500'
+        className='w-full h-full border-none'
         title="preview"
         sandbox="allow-scripts"
-        
         />
        </div>
     </div>
-  )
+  );
 }
 
 export default App
