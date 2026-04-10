@@ -30,7 +30,9 @@ function App() {
           ${activeTab ==='css'? 'bg-blue-600 text-white':'text-slate-500 hover:bg-slate-800'}`}
           >C
           </button>
-        <button onClick={()=>setActiveTab('js')}>J</button>
+        <button onClick={()=>setActiveTab('js')} 
+          className={`w-10 h-10 flex items-center justify-center rounded-lg transition-all font-bold
+          ${activeTab=== 'js'? 'bg-yellow-500 text-white' : 'bg-slate-500 hover:bg-slate-800'}`}>J</button>
         
       </nav>
        {/* Editior Part  */}
