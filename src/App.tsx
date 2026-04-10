@@ -11,17 +11,25 @@ function App() {
     INITIAL_CODE.js
   );
 
-  const [activetab, setActiveTab] = useState<'html'| 'css'|'js'>('html');
+  const [activeTab, setActiveTab] = useState<'html'| 'css'|'js'>('html');
 
   return (
-    <div className='h-screen w-full flex flex-col bg-slate-900 text-white'>
+    <div className='h-screen w-full flex  bg-slate-950 text-slate-300 overflow-hidden font-sans'>
       {/* sidebar */}
-      <nav>
+      <nav className='w-16 flex flex-col items-centerr py-6 gap-6 bg-slate-900 border-r border-slate-500'>
+        {/* html button */}
         <button onClick={()=>setActiveTab('html')}
-          className='w-4 p-4 m-3 bg-orange-400 '>
+        className={`w-10 h-10 flex items-center justify-center rounded-lg transition-all font-bold
+          ${activeTab === 'html' ? 'bg-orange-600 text-white' : 'text-slate-500 hover:bg-slate-800'}`}
+          >
           H
           </button>
-        <button onClick={()=>setActiveTab('css')}>C</button>
+          {/* css button */}
+        <button onClick={()=>setActiveTab('css')}
+         className={`w-10 h-10 flex items-center justify-center rounded-lg transition-all font-bold
+          ${activeTab ==='css'? 'bg-blue-600 text-white':'text-slate-500 hover:bg-slate-800'}`}
+          >C
+          </button>
         <button onClick={()=>setActiveTab('js')}>J</button>
         
       </nav>
