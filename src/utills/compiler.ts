@@ -1,17 +1,17 @@
 const compileCode = (html: string, css: string, js: string ): string =>{
   return `
   <!DOCTYPE html>
-  <html lang="en>
+  <html lang="en">
         <head>
              <meta charset = "UTF-8"/>
             <style>
              // CSS part 
              ${css}
-             </style>
+            </style>
 
         </head>
         <body>
-        ${html}
+          ${html}
 
         <script>
         //javascript part 
@@ -21,7 +21,7 @@ const compileCode = (html: string, css: string, js: string ): string =>{
            console.error("Runtime Error:", err);
          }
         </script>
-        </body>
+       </body>
     </html>
 
   `;

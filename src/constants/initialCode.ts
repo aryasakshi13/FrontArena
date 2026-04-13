@@ -6,26 +6,35 @@ export const INITIAL_CODE = {
     </div>`,
 
     css: `body{
-    background:#0f172e
+    background-color:#0f172e;
     color:white;
     font-family: sans-serif;
     display:flex;
-    justify-content;
+    justify-content:center;
     align-items:center;
     height:100vh;
     margin: 0;
     }
-    .container{text-align: center;}
-    button {
+    .container{
+    text-align: center;
+    } 
+    button{
     padding: 10px 20px;
-    bakground:#3b82f6;
+    background-color:#3b82f6;
     color:white;
     border:none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background 0.2s;
     }`,
 
-    js:`document.getElementById('btn').addEventListner('click',() =>{
-     alert("Logic is working");
-    });`
+    js:`
+    const btn = document.getElementById('magic-btn');
+
+if (btn) {
+  btn.addEventListener('click', () => {
+    alert('Logic is working! 🚀');
+    console.log('Button was clicked inside the iframe!');
+  });
+}`
 };

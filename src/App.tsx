@@ -2,6 +2,7 @@ import { usePlayGround } from './hooks/useplayground'
 import { INITIAL_CODE } from './constants/initialCode';
 import './App.css'
 import { useState } from 'react';
+import { Editor } from '@monaco-editor/react';
 
 function App() {
   
@@ -45,27 +46,41 @@ function App() {
           </div>
 
           {/*dynamic text area  */}
-          <textarea 
-            className ="flex-1 p-6 bg-transparent font-mono text-sm outline-none resize-none text-slate-300"
-            spellCheck={false}
+          <div className='flex-1 overflow-hidden'>
+          <Editor 
+              height="100%"
+
+              language={activeTab === 'js' ? 'javascript' : activeTab}
+                 theme="vs-dark"
             
             value={activeTab==='html' ? html: activeTab === 'css' ? css : js}
 
-            onChange={(e) => {
-              if(activeTab=== 'html') setHtml(e.target.value);
-              else if(activeTab === 'css') setCss(e.target.value);
-              else setjs(e.target.value);
+            onChange={(value) => {
+              if(activeTab=== 'html') setHtml(value || "");
+              else if(activeTab === 'css') setCss(value|| "");
+              else setjs(value || "");
+            }}
+
+            options={{
+              minimap:{enabled: false}, 
+              fontSize: 14,
+              wordWrap:"on",
+              scrollBeyondLastLine: false,
+              automaticLayout: true,
+              padding: {top:20}
+
             }}
           />
+          </div>
          </div>
 
         {/* Preview Part  */}
         <div className='flex-1 bg-white'>
         <iframe 
-        srcDoc={srcDoc}
-        className='w-full h-full border-none'
-        title="preview"
-        sandbox="allow-scripts"
+          srcDoc={srcDoc}
+          className='w-full h-full border-none'
+          title="preview"
+          sandbox="allow-scripts allow-modals"
         />
        </div>
     </div>
