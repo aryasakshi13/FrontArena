@@ -15,9 +15,9 @@ function App() {
   const [activeTab, setActiveTab] = useState<'html'| 'css'|'js'>('html');
 
   return (
-    <div className='h-screen w-full flex  bg-slate-950 text-slate-300 overflow-hidden font-sans'>
+    <div className='h-screen w-full flex flex-col lg:flex-row bg-slate-950 text-slate-300 overflow-hidden font-sans'>
       {/* sidebar */}
-      <nav className='w-16 flex flex-col items-centerr py-6 gap-6 bg-slate-900 border-r border-slate-500'>
+      <nav className='w-full lg:w-16 h-16 lg:h-full flex flex-row lg:flex-col items-center justify-center lg:justify-start py-0 lg:py-6 gap-4 lg:gap-6 bg-slate-900  border-b lg:border-b-0  lg:border-r  border-slate-500 shrink-0'>
         {/* html button */}
         <button onClick={()=>setActiveTab('html')}
         className={`w-10 h-10 flex items-center justify-center rounded-lg transition-all font-bold
@@ -25,23 +25,26 @@ function App() {
           >
           H
           </button>
-          {/* css button */}
+          {/* css button */} 
         <button onClick={()=>setActiveTab('css')}
          className={`w-10 h-10 flex items-center justify-center rounded-lg transition-all font-bold
           ${activeTab ==='css'? 'bg-blue-600 text-white':'text-slate-500 hover:bg-slate-800'}`}
-          >C
-          </button>
+          >C     
+          </button>   
         <button onClick={()=>setActiveTab('js')} 
           className={`w-10 h-10 flex items-center justify-center rounded-lg transition-all font-bold
           ${activeTab=== 'js'? 'bg-yellow-500 text-black' : 'text-slate-500 hover:bg-slate-800'}`}>
-          J
-          </button>
-      </nav>
+          J     
+          </button>   
+      </nav> 
 
-       {/* Editior Part  */}
-       <div className='flex flex-1 flex-col border-r border-slate-800 bg-slate-950'>
+         {/*main Content Area  */}
+         <main className='flex-1 flex flex-col lg:flex-row overflow-y-auto lg:overflow-hidden'>
+
+       {/* Editior Part  */}      
+       <div className=' w-full lg:w-1/2 h-[50vh] lg:h-full flex flex-col  border-b lg:border-b-0 lg:border-r border-slate-800 bg-slate-950'>
         {/* Tab title bar */}
-          <div className='h-10 px-4 flex items-center bg-slate-900/50 border-b border-slate-800 text-[10px] uppercase tracking-widest font-bold text-slate-500'>
+          <div className='h-10 px-4 flex items-center bg-slate-900/50 border-b border-slate-800 text-[10px] uppercase tracking-widest font-bold text-slate-500 shrink-0'>
              Editing:<span className='ml-2 texxt-slate-200'>{activeTab}</span>
           </div>
 
@@ -75,7 +78,7 @@ function App() {
          </div>
 
         {/* Preview Part  */}
-        <div className='flex-1 bg-white'>
+        <div className=' w-full lg:w-1/2 h-[50vh] lg:h-full bg-white'>
         <iframe 
           srcDoc={srcDoc}
           className='w-full h-full border-none'
@@ -83,6 +86,7 @@ function App() {
           sandbox="allow-scripts allow-modals"
         />
        </div>
+      </main>
     </div>
   );
 }
