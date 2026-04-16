@@ -23,18 +23,18 @@ function App() {
         className={`w-10 h-10 flex items-center justify-center rounded-lg transition-all font-bold
           ${activeTab === 'html' ? 'bg-orange-600 text-white' : 'text-slate-500 hover:bg-slate-800'}`}
           >
-          H
+          Html
           </button>
           {/* css button */} 
         <button onClick={()=>setActiveTab('css')}
          className={`w-10 h-10 flex items-center justify-center rounded-lg transition-all font-bold
           ${activeTab ==='css'? 'bg-blue-600 text-white':'text-slate-500 hover:bg-slate-800'}`}
-          >C     
+          >CSS    
           </button>   
         <button onClick={()=>setActiveTab('js')} 
           className={`w-10 h-10 flex items-center justify-center rounded-lg transition-all font-bold
           ${activeTab=== 'js'? 'bg-yellow-500 text-black' : 'text-slate-500 hover:bg-slate-800'}`}>
-          J     
+          JS     
           </button>   
       </nav> 
 
