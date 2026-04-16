@@ -20,7 +20,7 @@ function App() {
       <nav className='w-full lg:w-16 h-16 lg:h-full flex flex-row lg:flex-col items-center justify-center lg:justify-start py-0 lg:py-6 gap-4 lg:gap-6 bg-slate-900  border-b lg:border-b-0  lg:border-r  border-slate-500 shrink-0'>
         {/* html button */}
         <button onClick={()=>setActiveTab('html')}
-        className={`w-10 h-10 p-4 flex items-center justify-center rounded-lg transition-all font-bold
+        className={`w-10 h-10 py-2 px-6 flex items-center justify-center rounded-lg transition-all font-bold
           ${activeTab === 'html' ? 'bg-orange-600 text-white' : 'text-slate-500 hover:bg-slate-800'}`}
           >
           html
