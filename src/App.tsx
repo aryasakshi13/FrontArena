@@ -2,6 +2,7 @@ import { usePlayGround } from './hooks/useplayground'
 import { INITIAL_FILES } from './constants/initialCode';
 import './App.css'
 import { useState } from 'react';
+import React from 'react';
 import { Editor } from '@monaco-editor/react';
 // import * as Resizable from "react-resizable-panels";
 
@@ -49,7 +50,7 @@ function App() {
 
   const finalizeRename = (e: React.KeyboardEvent, id: string) => {
     if (e.key == 'Enter' && tempName.trim() !== "") {
-      const extension = tempName.split(".").pop()?.toLowerCase();
+      // const extension = tempName.split(".").pop()?.toLowerCase();
 
       setFiles(prev => prev.map(f =>
         f.id === id ? {
@@ -70,7 +71,7 @@ function App() {
 
   const finalizeFile = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && newFileName.trim() !== "") {
-      const extension = newFileName.split(".").pop()?.toLowerCase();
+      // const extension = newFileName.split(".").pop()?.toLowerCase();
 
       const newFile = {
         id: Date.now().toString(),
