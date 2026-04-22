@@ -2,7 +2,7 @@ import { usePlayGround } from './hooks/useplayground'
 import { INITIAL_FILES } from './constants/initialCode';
 import './App.css'
 import { useState } from 'react';
-import { Editor } from '@monaco-editor/react'; 
+import { Editor } from '@monaco-editor/react';
 // import * as Resizable from "react-resizable-panels";
 
 
@@ -41,7 +41,7 @@ function App() {
     setFiles(updatedFiles);
 
     if (activeFieldId === idToDelete) {
-      setActiveFieldId(updatedFiles[0].id)
+      setActiveFieldId(updatedFiles.length > 0 ? updatedFiles[0].id : "");
     }
   };
 
@@ -170,14 +170,14 @@ function App() {
                   <div className="flex items-center gap-2 truncate">
                     <span className="text-[10px] opacity-50 font-mono">
                       {file.name.endsWith('.html') ? (
-                          <svg className="text-orange-600" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M1.5 0h21l-1.91 21.563L12 24l-8.59-2.437L1.5 0zm7.031 16.75l.328 3.375L12 21.031l3.141-.906.328-3.375h-6.78zM6.281 3.656l.75 8.25h10.031l-.188 1.875H7.125l.188 1.875H16.75l-.563 5.625L12 19.313l-4.188-1.219-.094-1.125H5.813l.188 2.625L12 21.5l5.906-1.875.844-9.375H7.219l-.188-1.875H19.03l.188-1.875H6.281z"/></svg>
-                      ) : file.name.endsWith('.css') ? 
-                      (
-                        <svg className="text-blue-500" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M1.5 0h21l-1.91 21.563L12 24l-8.59-2.437L1.5 0zm17.03 16.531l-.563 5.625L12 23.313l-5.906-1.125.188-2.625h1.906l-.094 1.125L12 21.906l4.188-1.219.563-5.625H7.125l-.188-1.875H17.5l.188-1.875H6.75l-.188-1.875h11.25l.188-1.875H6.375l-.188-1.875H19.5l-.97 11.25z"/></svg>
-                        ): file.name.endsWith('.js') ? 
+                        <svg className="text-orange-600" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M1.5 0h21l-1.91 21.563L12 24l-8.59-2.437L1.5 0zm7.031 16.75l.328 3.375L12 21.031l3.141-.906.328-3.375h-6.78zM6.281 3.656l.75 8.25h10.031l-.188 1.875H7.125l.188 1.875H16.75l-.563 5.625L12 19.313l-4.188-1.219-.094-1.125H5.813l.188 2.625L12 21.5l5.906-1.875.844-9.375H7.219l-.188-1.875H19.03l.188-1.875H6.281z" /></svg>
+                      ) : file.name.endsWith('.css') ?
                         (
-                          <div className="bg-yellow-400 text-black font-bold text-[8px] w-4 h-4 flex items-center justify-center rounded-sm">JS</div>
-                         ) : <svg className="text-slate-400" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>}
+                          <svg className="text-blue-500" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M1.5 0h21l-1.91 21.563L12 24l-8.59-2.437L1.5 0zm17.03 16.531l-.563 5.625L12 23.313l-5.906-1.125.188-2.625h1.906l-.094 1.125L12 21.906l4.188-1.219.563-5.625H7.125l-.188-1.875H17.5l.188-1.875H6.75l-.188-1.875h11.25l.188-1.875H6.375l-.188-1.875H19.5l-.97 11.25z" /></svg>
+                        ) : file.name.endsWith('.js') ?
+                          (
+                            <div className="bg-yellow-400 text-black font-bold text-[8px] w-4 h-4 flex items-center justify-center rounded-sm">JS</div>
+                          ) : <svg className="text-slate-400" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>}
                     </span>
                     <span className="truncate">{file.name}</span>
                   </div>
