@@ -36,53 +36,75 @@ export const INITIAL_FILES = [
   <script src="script.js"></script>
 </body>
 </html>
-
-
 `
   },
   {
     id: "2",
     name: "style.css",
     language: "css",
-    content: `body {
+    content: `
+       body {
   background-color: #0B2429;
   color: #F2AD73;
   font-family: sans-serif;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* Changed to center to ensure it stays in the middle of the preview */
+  justify-content: center; 
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
-  overflow: hidden;
+  box-sizing: border-box;
+  padding: 20px;
+  overflow-x: hidden;
 }
 
 .canvas {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  max-width: 400px;
   text-align: center;
-  gap : 40px ;
+  gap: 20px;
 }
-  .text-container{
-    text-align: center;
+
+.text-container {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.text-container h1 {
+  font-size: clamp(1.8rem, 8vw, 2.5rem);
+  margin: 0;
+  color: #FFF5D1;
+}
+
+.tree-box {
+  background-color: rgba(14, 110, 95, 0.3);
+  border: 1px solid rgba(242, 148, 129, 0.2);
+  padding: 30px; /* Reduced for better mobile fit */
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+/* FIXED MEDIA QUERY SYNTAX */
+@media (max-width: 400px) {
+  .tree-container {
+    transform: scale(0.8);
+    margin: -10px 0;
   }
-  
-   .tree-box {
-   
-    background-color:#0e6e5f;
-    border: 1px solid rgba(242, 148, 129, 0.1);
-    padding: 40px 60px;
-    border-radius: 20px;
-    box-shadow: 0 20x 50px rgba(0,0,0,0.3);
-   }
+}
 
 .tree-container {
   position: relative;
   width: 200px;
-  height: 180px; 
-  margin-bottom: 20px;
-  
+  height: 180px;
 }
 
 .tree-bottom, .tree-middle, .tree-top {
@@ -95,7 +117,6 @@ export const INITIAL_FILES = [
   border-right: solid transparent;
 }
 
-/* Bottom */
 .tree-bottom {
   bottom: 0;
   border-left-width: 100px;
@@ -104,7 +125,6 @@ export const INITIAL_FILES = [
   z-index: 1;
 }
 
-/* Middle  */
 .tree-middle {
   bottom: 45px;
   border-left-width: 80px;
@@ -113,7 +133,6 @@ export const INITIAL_FILES = [
   z-index: 2;
 }
 
-/* Top */
 .tree-top {
   bottom: 95px;
   border-left-width: 60px;
@@ -121,17 +140,7 @@ export const INITIAL_FILES = [
   border-bottom: 65px solid #FFF5D1;
   z-index: 3;
 }
-
-h1 {
-  margin: 10px 0 5px 0;
-  letter-spacing: 2px;
-}
-
-p {
-  margin: 0;
-  opacity: 0.7;
-  font-size: 14px;
-}`
+    `
   },
   {
     id: "3",

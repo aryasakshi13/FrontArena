@@ -250,13 +250,15 @@ function App() {
         </div>
 
         {/* Preview Part  */}
-        <div className=' w-full lg:w-1/2 h-[50vh] lg:h-full bg-white'>
+        <div className=' w-full lg:w-1/2 h-[50vh] lg:h-screen top-0 bg-white'>
+        <div className='relative w-full h-full overflow-auto'>
           <iframe
             srcDoc={srcDoc}
-            className='w-full h-full border-none'
+            className='w-full h-full min-h-full border-none'
             title="preview"
             sandbox="allow-scripts allow-modals"
           />
+          </div>
         </div>
       </main>
     </div>
