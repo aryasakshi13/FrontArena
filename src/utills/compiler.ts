@@ -35,7 +35,7 @@
 
 
        const cssRegex = /<link\s+[^>]*href=["'](.+?\.css)["'][^>]*>/gi;
-       html = html.replace(cssRegex, (match,  fileName)=>{
+       html = html.replace(cssRegex, (_: string,  fileName:string)=>{
         const file = files.find(f => f.name === fileName);
         return file? 
          `<style>${file.content}</style>` 
@@ -43,7 +43,7 @@
        });
 
        const jsRegex =  /<script\s+[^>]*src=["'](.+?\.js)["'][^>]*>\s*<\/script>/gi;
-       html = html.replace(jsRegex,(match, fileName) =>{
+       html = html.replace(jsRegex,(_: string, fileName: string) =>{
            const file = files.find(f => f.name === fileName);
 
            return file
