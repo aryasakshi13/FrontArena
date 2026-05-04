@@ -1,14 +1,10 @@
 
-
-
 export const INITIAL_FILES = [
   {
     id: "1",
     name: "index.html",
     language: "html",
     content: `  
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -158,7 +154,7 @@ treeParts.forEach(part => {
 
 
 
-  
+
 
 //     <link rel = "stylesheet" href="style.css">
 //     <div class="canvas">
@@ -172,6 +168,6 @@ treeParts.forEach(part => {
 //     <div class="tree-middle"></div>
 //     <div class="tree-top"></div>
 //   </div>
-//   </div> 
+//   </div>
 // </div>
 // <script src = "script.js"></script>
