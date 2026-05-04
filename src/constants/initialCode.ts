@@ -6,21 +6,43 @@ export const INITIAL_FILES = [
     id: "1",
     name: "index.html",
     language: "html",
-    content: `<div class="canvas">
+    content: `  
 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FrontArena | Code Playground</title>
+  <!-- Manual CSS Linking -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="canvas">
     <div class="text-container">
-    <h1>FrontArena</h1>
-     <p>The ultimate playground for Modern Web Artisans</p>
+      <h1>FrontArena</h1>
+      <p>The ultimate playground for Modern Web Artisans. <br> 
+      <span>Master HTML, CSS, and JS in real-time.</span></p>
     </div>
-  <div class ="tree-box">
-  <div class="tree-container">
-    <div class="tree-bottom"></div>
-    <div class="tree-middle"></div>
-    <div class="tree-top"></div>
+
+    <div class="tree-box">
+      <div class="tree-container">
+        <div class="tree-bottom"></div>
+        <div class="tree-middle"></div>
+        <div class="tree-top"></div>
+      </div>
+    </div> 
   </div>
-  </div>
-  
-</div>`
+
+  <!-- Manual JS Linking -->
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+`
   },
   {
     id: "2",
@@ -138,3 +160,18 @@ treeParts.forEach(part => {
 
   
 
+//     <link rel = "stylesheet" href="style.css">
+//     <div class="canvas">
+//     <div class="text-container">
+//     <h1>FrontArena</h1>
+//      <p>The ultimate playground for Modern Web Artisans</p>
+//     </div>
+//   <div class ="tree-box">
+//   <div class="tree-container">
+//     <div class="tree-bottom"></div>
+//     <div class="tree-middle"></div>
+//     <div class="tree-top"></div>
+//   </div>
+//   </div> 
+// </div>
+// <script src = "script.js"></script>

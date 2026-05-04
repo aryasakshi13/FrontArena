@@ -15,19 +15,22 @@ const [srcDoc, setSrcDoc] = useState('');
 
 useEffect(() => {
       const timeout = setTimeout(()=>{
-        const html = files.find(f => f.name?.endsWith('.html'))?.content || '';
-        const css =files
-        .filter(f => f.name?.endsWith('.css'))
-        .map(f => f.content)
-        .join('\n');
+        // const html = files.find(f => f.name?.endsWith('.html'))?.content || '';
+        // const css =files
+        // .filter(f => f.name?.endsWith('.css'))
+        // .map(f => f.content)
+        // .join('\n');
 
-        const js = files
-          .filter(f => f.name.endsWith('.js'))
-          .map(f => f.content)
-          .join('\n');
+        // const js = files
+        //   .filter(f => f.name.endsWith('.js'))
+        //   .map(f => f.content)
+        //   .join('\n');
 
 
-        const compiled = compileCode(html, css,js);
+        // const compiled = compileCode(html, css,js);
+
+         const compiled = compileCode(files);
+
         setSrcDoc(compiled);
      
       },500);
